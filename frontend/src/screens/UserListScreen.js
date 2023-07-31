@@ -1,100 +1,43 @@
-import axios from 'axios';
-import React, { useContext, useEffect, useReducer } from 'react';
-import Button from 'react-bootstrap/Button';
-import { Helmet } from 'react-helmet-async';
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-import { toast } from 'react-toastify';
+import { deleteUser, listUsers } from '../actions/userActions';
 import LoadingBox from '../components/LoadingBox';
 import MessageBox from '../components/MessageBox';
-import { Store } from '../Store';
-import { getError } from '../utils';
-const reducer = (state, action) => {
-  switch (action.type) {
-    case 'FETCH_REQUEST':
-      return { ...state, loading: true };
-    case 'FETCH_SUCCESS':
-      return {
-        ...state,
-        users: action.payload,
-        loading: false,
-      };
-    case 'FETCH_FAIL':
-      return { ...state, loading: false, error: action.payload };
+import { USER_DETAILS_RESET } from '../constants/userConstants';
 
-    case 'DELETE_REQUEST':
-      return { ...state, loadingDelete: true, successDelete: false };
-    case 'DELETE_SUCCESS':
-      return {
-        ...state,
-        loadingDelete: false,
-        successDelete: true,
-      };
-    case 'DELETE_FAIL':
-      return { ...state, loadingDelete: false };
-    case 'DELETE_RESET':
-      return { ...state, loadingDelete: false, successDelete: false };
-    default:
-      return state;
-  }
-};
-export default function UserListScreen() {
+export default function UserListScreen(props) {
   const navigate = useNavigate();
+  const userList = useSelector((state) => state.userList);
+  const { loading, error, users } = userList;
 
-  const [{ loading, error, users, loadingDelete, successDelete }, dispatch] =
-    useReducer(reducer, {
-      loading: true,
-      error: '',
-    });
+  const userDelete = useSelector((state) => state.userDelete);
+  const {
+    loading: loadingDelete,
+    error: errorDelete,
+    success: successDelete,
+  } = userDelete;
 
-  const { state } = useContext(Store);
-  const { userInfo } = state;
+  const dispatch = useDispatch();
   useEffect(() => {
-    const fetchData = async () => {
-      try {
-        dispatch({ type: 'FETCH_REQUEST' });
-        const { data } = await axios.get(`/api/users`, {
-          headers: { Authorization: `Bearer ${userInfo.token}` },
-        });
-        dispatch({ type: 'FETCH_SUCCESS', payload: data });
-      } catch (err) {
-        dispatch({
-          type: 'FETCH_FAIL',
-          payload: getError(err),
-        });
-      }
-    };
-    if (successDelete) {
-      dispatch({ type: 'DELETE_RESET' });
-    } else {
-      fetchData();
-    }
-  }, [userInfo, successDelete]);
-
-  const deleteHandler = async (user) => {
-    if (window.confirm('Are you sure to delete?')) {
-      try {
-        dispatch({ type: 'DELETE_REQUEST' });
-        await axios.delete(`/api/users/${user._id}`, {
-          headers: { Authorization: `Bearer ${userInfo.token}` },
-        });
-        toast.success('user deleted successfully');
-        dispatch({ type: 'DELETE_SUCCESS' });
-      } catch (error) {
-        toast.error(getError(error));
-        dispatch({
-          type: 'DELETE_FAIL',
-        });
-      }
+    dispatch(listUsers());
+    dispatch({
+      type: USER_DETAILS_RESET,
+    });
+  }, [dispatch, successDelete]);
+  const deleteHandler = (user) => {
+    if (window.confirm('Are you sure?')) {
+      dispatch(deleteUser(user._id));
     }
   };
   return (
     <div>
-      <Helmet>
-        <title>Users</title>
-      </Helmet>
       <h1>Users</h1>
-
       {loadingDelete && <LoadingBox></LoadingBox>}
+      {errorDelete && <MessageBox variant="danger">{errorDelete}</MessageBox>}
+      {successDelete && (
+        <MessageBox variant="success">User Deleted Successfully</MessageBox>
+      )}
       {loading ? (
         <LoadingBox></LoadingBox>
       ) : error ? (
@@ -106,6 +49,7 @@ export default function UserListScreen() {
               <th>ID</th>
               <th>NAME</th>
               <th>EMAIL</th>
+              <th>IS SELLER</th>
               <th>IS ADMIN</th>
               <th>ACTIONS</th>
             </tr>
@@ -116,23 +60,23 @@ export default function UserListScreen() {
                 <td>{user._id}</td>
                 <td>{user.name}</td>
                 <td>{user.email}</td>
+                <td>{user.isSeller ? 'YES' : ' NO'}</td>
                 <td>{user.isAdmin ? 'YES' : 'NO'}</td>
                 <td>
-                  <Button
+                  <button
                     type="button"
-                    variant="light"
-                    onClick={() => navigate(`/admin/user/${user._id}`)}
+                    className="small"
+                    onClick={() => navigate(`/user/${user._id}/edit`)}
                   >
                     Edit
-                  </Button>
-                  &nbsp;
-                  <Button
+                  </button>
+                  <button
                     type="button"
-                    variant="light"
+                    className="small"
                     onClick={() => deleteHandler(user)}
                   >
                     Delete
-                  </Button>
+                  </button>
                 </td>
               </tr>
             ))}

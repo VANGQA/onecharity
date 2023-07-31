@@ -1,99 +1,41 @@
-import axios from 'axios';
-import React, { useContext, useEffect, useReducer } from 'react';
-import { toast } from 'react-toastify';
-import Button from 'react-bootstrap/Button';
-import { Helmet } from 'react-helmet-async';
-import { useNavigate } from 'react-router-dom';
+import React, { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import { useNavigate, useLocation } from 'react-router-dom';
+import { deleteOrder, listOrders } from '../actions/orderActions';
 import LoadingBox from '../components/LoadingBox';
 import MessageBox from '../components/MessageBox';
-import { Store } from '../Store';
-import { getError } from '../utils';
-const reducer = (state, action) => {
-  switch (action.type) {
-    case 'FETCH_REQUEST':
-      return { ...state, loading: true };
-    case 'FETCH_SUCCESS':
-      return {
-        ...state,
-        orders: action.payload,
-        loading: false,
-      };
-    case 'FETCH_FAIL':
-      return { ...state, loading: false, error: action.payload };
-    case 'DELETE_REQUEST':
-      return { ...state, loadingDelete: true, successDelete: false };
-    case 'DELETE_SUCCESS':
-      return {
-        ...state,
-        loadingDelete: false,
-        successDelete: true,
-      };
-    case 'DELETE_FAIL':
-      return { ...state, loadingDelete: false };
-    case 'DELETE_RESET':
-      return { ...state, loadingDelete: false, successDelete: false };
-    default:
-      return state;
-  }
-};
-export default function OrderListScreen() {
+import { ORDER_DELETE_RESET } from '../constants/orderConstants';
+
+export default function OrderListScreen(props) {
   const navigate = useNavigate();
-  const { state } = useContext(Store);
-  const { userInfo } = state;
-  const [{ loading, error, orders, loadingDelete, successDelete }, dispatch] =
-    useReducer(reducer, {
-      loading: true,
-      error: '',
-    });
+  const { pathname } = useLocation();
+  const sellerMode = pathname.indexOf('/seller') >= 0;
+  const orderList = useSelector((state) => state.orderList);
+  const { loading, error, orders } = orderList;
+  const orderDelete = useSelector((state) => state.orderDelete);
+  const {
+    loading: loadingDelete,
+    error: errorDelete,
+    success: successDelete,
+  } = orderDelete;
 
+  const userSignin = useSelector((state) => state.userSignin);
+  const { userInfo } = userSignin;
+  const dispatch = useDispatch();
   useEffect(() => {
-    const fetchData = async () => {
-      try {
-        dispatch({ type: 'FETCH_REQUEST' });
-        const { data } = await axios.get(`/api/orders`, {
-          headers: { Authorization: `Bearer ${userInfo.token}` },
-        });
-        dispatch({ type: 'FETCH_SUCCESS', payload: data });
-      } catch (err) {
-        dispatch({
-          type: 'FETCH_FAIL',
-          payload: getError(err),
-        });
-      }
-    };
-
-    if (successDelete) {
-      dispatch({ type: 'DELETE_RESET' });
-    } else {
-      fetchData();
-    }
-  }, [userInfo, successDelete]);
-
-  const deleteHandler = async (order) => {
+    dispatch({ type: ORDER_DELETE_RESET });
+    dispatch(listOrders({ seller: sellerMode ? userInfo._id : '' }));
+  }, [dispatch, sellerMode, successDelete, userInfo._id]);
+  const deleteHandler = (order) => {
     if (window.confirm('Are you sure to delete?')) {
-      try {
-        dispatch({ type: 'DELETE_REQUEST' });
-        await axios.delete(`/api/orders/${order._id}`, {
-          headers: { Authorization: `Bearer ${userInfo.token}` },
-        });
-        toast.success('order deleted successfully');
-        dispatch({ type: 'DELETE_SUCCESS' });
-      } catch (err) {
-        toast.error(getError(error));
-        dispatch({
-          type: 'DELETE_FAIL',
-        });
-      }
+      dispatch(deleteOrder(order._id));
     }
   };
-
   return (
     <div>
-      <Helmet>
-        <title>Orders</title>
-      </Helmet>
       <h1>Orders</h1>
       {loadingDelete && <LoadingBox></LoadingBox>}
+      {errorDelete && <MessageBox variant="danger">{errorDelete}</MessageBox>}
       {loading ? (
         <LoadingBox></LoadingBox>
       ) : error ? (
@@ -115,7 +57,7 @@ export default function OrderListScreen() {
             {orders.map((order) => (
               <tr key={order._id}>
                 <td>{order._id}</td>
-                <td>{order.user ? order.user.name : 'DELETED USER'}</td>
+                <td>{order.user.name}</td>
                 <td>{order.createdAt.substring(0, 10)}</td>
                 <td>{order.totalPrice.toFixed(2)}</td>
                 <td>{order.isPaid ? order.paidAt.substring(0, 10) : 'No'}</td>
@@ -125,23 +67,22 @@ export default function OrderListScreen() {
                     : 'No'}
                 </td>
                 <td>
-                  <Button
+                  <button
                     type="button"
-                    variant="light"
+                    className="small"
                     onClick={() => {
                       navigate(`/order/${order._id}`);
                     }}
                   >
                     Details
-                  </Button>
-                  &nbsp;
-                  <Button
+                  </button>
+                  <button
                     type="button"
-                    variant="light"
+                    className="small"
                     onClick={() => deleteHandler(order)}
                   >
                     Delete
-                  </Button>
+                  </button>
                 </td>
               </tr>
             ))}

@@ -1,15 +1,14 @@
+import http from 'http';
+import { Server } from 'socket.io';
 import express from 'express';
-import path from 'path';
 import mongoose from 'mongoose';
 import dotenv from 'dotenv';
-import seedRouter from './routes/seedRoutes.js';
-import productRouter from './routes/productRoutes.js';
-import userRouter from './routes/userRoutes.js';
-import orderRouter from './routes/orderRoutes.js';
-import uploadRouter from './routes/uploadRoutes.js';
-
+import path from 'path';
+import productRouter from './routers/productRouter.js';
+import userRouter from './routers/userRouter.js';
+import orderRouter from './routers/orderRouter.js';
+import uploadRouter from './routers/uploadRouter.js';
 dotenv.config();
-
 mongoose
   .connect(process.env.MONGODB_URI)
   .then(() => {
@@ -24,9 +23,11 @@ app.use(express.urlencoded({ extended: true }));
 app.get('/api/keys/paypal', (req, res) => {
   res.send(process.env.PAYPAL_CLIENT_ID || 'sb');
 });
+app.get('/api/keys/google', (req, res) => {
+  res.send({ key: process.env.GOOGLE_API_KEY || '' });
+});
 
 app.use('/api/upload', uploadRouter);
-app.use('/api/seed', seedRouter);
 app.use('/api/products', productRouter);
 app.use('/api/users', userRouter);
 app.use('/api/orders', orderRouter);

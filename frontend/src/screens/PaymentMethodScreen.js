@@ -1,67 +1,64 @@
-import React, { useContext, useEffect, useState } from 'react';
-import { Helmet } from 'react-helmet-async';
+import React, { useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
-import Form from 'react-bootstrap/Form';
-import Button from 'react-bootstrap/Button';
+import { savePaymentMethod } from '../actions/cartActions';
 import CheckoutSteps from '../components/CheckoutSteps';
-import { Store } from '../Store';
 
-export default function PaymentMethodScreen() {
+export default function PaymentMethodScreen(props) {
   const navigate = useNavigate();
-  const { state, dispatch: ctxDispatch } = useContext(Store);
-  const {
-    cart: { shippingAddress, paymentMethod },
-  } = state;
-
-  const [paymentMethodName, setPaymentMethod] = useState(
-    paymentMethod || 'PayPal'
-  );
-
-  useEffect(() => {
-    if (!shippingAddress.address) {
-      navigate('/shipping');
-    }
-  }, [shippingAddress, navigate]);
+  const cart = useSelector((state) => state.cart);
+  const { shippingAddress } = cart;
+  if (!shippingAddress.address) {
+    navigate('/shipping');
+  }
+  const [paymentMethod, setPaymentMethod] = useState('PayPal');
+  const dispatch = useDispatch();
   const submitHandler = (e) => {
     e.preventDefault();
-    ctxDispatch({ type: 'SAVE_PAYMENT_METHOD', payload: paymentMethodName });
-    localStorage.setItem('paymentMethod', paymentMethodName);
+    dispatch(savePaymentMethod(paymentMethod));
     navigate('/placeorder');
   };
   return (
     <div>
       <CheckoutSteps step1 step2 step3></CheckoutSteps>
-      <div className="container small-container">
-        <Helmet>
-          <title>Payment Method</title>
-        </Helmet>
-        <h1 className="my-3">Payment Method</h1>
-        <Form onSubmit={submitHandler}>
-          <div className="mb-3">
-            <Form.Check
+      <form className="form" onSubmit={submitHandler}>
+        <div>
+          <h1>Payment Method</h1>
+        </div>
+        <div>
+          <div>
+            <input
               type="radio"
-              id="PayPal"
-              label="PayPal"
+              id="paypal"
               value="PayPal"
-              checked={paymentMethodName === 'PayPal'}
+              name="paymentMethod"
+              required
+              checked
               onChange={(e) => setPaymentMethod(e.target.value)}
-            />
+            ></input>
+            <label htmlFor="paypal">PayPal</label>
           </div>
-          <div className="mb-3">
-            <Form.Check
+        </div>
+        <div>
+          <div>
+            <input
               type="radio"
-              id="Stripe"
-              label="Stripe"
+              id="stripe"
               value="Stripe"
-              checked={paymentMethodName === 'Stripe'}
+              name="paymentMethod"
+              required
               onChange={(e) => setPaymentMethod(e.target.value)}
-            />
+            ></input>
+            <label htmlFor="stripe">Stripe</label>
           </div>
-          <div className="mb-3">
-            <Button type="submit">Continue</Button>
-          </div>
-        </Form>
-      </div>
+        </div>
+        <div>
+          <label />
+          <button className="primary" type="submit">
+            Continue
+          </button>
+        </div>
+      </form>
     </div>
   );
 }
