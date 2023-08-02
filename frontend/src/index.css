@@ -27,16 +27,11 @@ body {
 }
 header {
   grid-area: header;
-  background-color: #203040;
+  background-color: #1d73cf;
 }
 main {
   grid-area: main;
   padding: 1rem;
-}
-footer {
-  grid-area: footer;
-  background-color: #203040;
-  color: #ffffff;
 }
 /* Common */
 h1 {
@@ -52,7 +47,7 @@ a {
   text-decoration: none;
 }
 a:hover {
-  color: #ff8000;
+  color: #1d73cf;
 }
 ul {
   padding: 0;
@@ -85,7 +80,7 @@ button:hover {
   border: 0.1rem #404040 solid;
 }
 button.primary {
-  background-color: #f0c040;
+  background-color: #1d73cf;
 }
 button.block {
   width: 100%;

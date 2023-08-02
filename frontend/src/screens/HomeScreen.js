@@ -8,6 +8,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { listProducts } from '../actions/productActions';
 import { listTopSellers } from '../actions/userActions';
 import { Link } from 'react-router-dom';
+import Slider from '../components/Slider';
+import slides from '../mock.json';
 
 export default function HomeScreen() {
   const dispatch = useDispatch();
@@ -27,6 +29,9 @@ export default function HomeScreen() {
   }, [dispatch]);
   return (
     <div>
+      <div className="App">
+        <Slider slides={slides} />
+      </div>
       <h2>Top Sellers</h2>
       {loadingSellers ? (
         <LoadingBox></LoadingBox>
