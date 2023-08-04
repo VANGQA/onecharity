@@ -10,7 +10,7 @@ import { listTopSellers } from '../actions/userActions';
 import { Link } from 'react-router-dom';
 import Button from 'react-bootstrap/Button';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Slider from './slider';
+import Slider from './components/slider';
 import slides from './mock.json'
 import { MDBContainer, MDBRow, MDBCol, MDBRipple } from "mdb-react-ui-kit";
 
