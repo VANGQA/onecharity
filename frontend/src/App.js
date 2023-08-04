@@ -323,7 +323,7 @@ function App() {
             <Route path="/" element={<HomeScreen />} exact></Route>
           </Routes>
         </main>
-       <MDBFooter className='text-center' color='white' bgColor='dark'>
+       <MDBFooter className='text-center' color='white' bgColor='primary'>
         <MDBContainer className='p-4'>
         <section className='mb-4'>
           <MDBBtn outline color="light" floating className='m-1' href='#!' role='button'>
