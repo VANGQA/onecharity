@@ -35,6 +35,17 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Slider from './components/Slider';
 import slides from './mock.json';
 
+import {
+  MDBFooter,
+  MDBContainer,
+  MDBIcon,
+  MDBInput,
+  MDBCol,
+  MDBRow,
+  MDBBtn
+} from 'mdb-react-ui-kit';
+
+
 function App() {
   const cart = useSelector((state) => state.cart);
   const [sidebarIsOpen, setSidebarIsOpen] = useState(false);
