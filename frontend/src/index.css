@@ -30,12 +30,6 @@ header {
   background-color: #1d73cf;
 }
 
-.carousel .carousel-indicators button {
-    width: 20px;
-    height: 20px;
-    border-radius: 50%;
-}
-
 main {
   grid-area: main;
   padding: 1rem;
