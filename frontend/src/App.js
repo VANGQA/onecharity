@@ -171,6 +171,9 @@ function App() {
             )}
           </ul>
         </aside>
+        <div className="App">
+            <Slider slides={slides} />
+        </div>
         <main>
           <Routes>
             <Route path="/seller/:id" element={<SellerScreen />}></Route>
