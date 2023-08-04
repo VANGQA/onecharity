@@ -35,7 +35,7 @@ export default function HomeScreen() {
   return (
     <div>
       <div className="App">
-        <Slider slides={slides} >
+        <Slider slides={slides} />
       </div>
       <h2>Top Sellers</h2>
       {loadingSellers ? (
