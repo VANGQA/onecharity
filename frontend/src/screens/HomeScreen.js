@@ -63,7 +63,7 @@ export default function HomeScreen() {
         <MDBCol md="12" lg="4" className="mb-4">
           <MDBRipple
             rippleColor="dark"
-            rippleTag="div"
+            rippleTag="divv"
             className="bg-image rounded hover-zoom shadow-1-strong"
           >
             <img
