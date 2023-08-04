@@ -31,9 +31,6 @@ import MapScreen from './screens/MapScreen';
 import DashboardScreen from './screens/DashboardScreen';
 import SupportScreen from './screens/SupportScreen';
 import ChatBox from './components/ChatBox';
-import 'bootstrap/dist/css/bootstrap.min.css';
-import Slider from './components/Slider';
-import slides from './mock.json';
 
 import {
   MDBFooter,
