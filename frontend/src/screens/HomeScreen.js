@@ -35,9 +35,6 @@ export default function HomeScreen() {
   }, [dispatch]);
   return (
     <div>
-      <div className="App">
-        <Slider slides={slides} />
-      </div>
       <h2>Top Sellers</h2>
       {loadingSellers ? (
         <LoadingBox></LoadingBox>
