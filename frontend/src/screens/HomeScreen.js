@@ -33,10 +33,8 @@ export default function HomeScreen() {
     
   }, [dispatch]);
   return (
-    <div className="App">
+  <div>
       <Slider slides={slides} />
-    </div>
-    <div>
       <h2>Top Sellers</h2>
       {loadingSellers ? (
         <LoadingBox></LoadingBox>
