@@ -5,7 +5,7 @@ import Product from '../components/Product';
 import LoadingBox from '../components/LoadingBox';
 import MessageBox from '../components/MessageBox';
 import { useDispatch, useSelector } from 'react-redux';
-import { listProducts } from '../actions/productActions';
+import { listProducts,} from '../actions/productActions';
 import { listTopSellers } from '../actions/userActions';
 import { Link } from 'react-router-dom';
 import Slider from '../components/Slider';
@@ -24,17 +24,12 @@ export default function HomeScreen() {
     users: sellers,
   } = userTopSellersList;
 
-const productCategoryList = useSelector((state) => state.productCategoryList);
-  const {
-    loading: loadingCategories,
-    error: errorCategories,
-    categories,
-  } = productCategoryList;
+
 
   useEffect(() => {
     dispatch(listProducts({}));
     dispatch(listTopSellers());
-    dispatch(listProductCategories());
+    
   }, [dispatch]);
   return (
     <div>
@@ -76,7 +71,7 @@ const productCategoryList = useSelector((state) => state.productCategoryList);
               src="https://mdbcdn.b-cdn.net/img/Photos/Horizontal/E-commerce/new/img(1).webp"
               fluid
               className="w-100"
-            />
+            alt="category-img" />
             <a href="#!">
               <div
                 className="mask"
