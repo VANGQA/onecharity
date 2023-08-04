@@ -182,6 +182,8 @@ export default function HomeScreen() {
       )}
     </div>
 
+  <>  
+
    <MDBFooter bgColor='primary' className='text-center text-lg-start text-muted'>
       <section className='d-flex justify-content-center justify-content-lg-between p-4 border-bottom'>
         <div className='me-5 d-none d-lg-block'>
@@ -300,5 +302,6 @@ export default function HomeScreen() {
         </a>
       </div>
     </MDBFooter>
+</>
   );
 }
