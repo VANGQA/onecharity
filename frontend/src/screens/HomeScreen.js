@@ -9,6 +9,16 @@ import { listProducts,} from '../actions/productActions';
 import { listTopSellers } from '../actions/userActions';
 import { Link } from 'react-router-dom';
 
+import {
+  MDBFooter,
+  MDBContainer,
+  MDBIcon,
+  MDBInput,
+  MDBCol,
+  MDBRow,
+  MDBBtn
+} from 'mdb-react-ui-kit';
+
 export default function HomeScreen() {
   const dispatch = useDispatch();
   const productList = useSelector((state) => state.productList);
