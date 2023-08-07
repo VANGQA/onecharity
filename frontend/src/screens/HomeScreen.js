@@ -8,9 +8,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { listProducts,} from '../actions/productActions';
 import { listTopSellers } from '../actions/userActions';
 import { Link } from 'react-router-dom';
-import 'bootstrap/dist/css/bootstrap.css';
-import Slider from '../components/Slider';
-import slides from '../mock.json';
+
 import { MDBContainer, MDBRow, MDBCol, MDBRipple } from "mdb-react-ui-kit";
 
 export default function HomeScreen() {
@@ -34,7 +32,7 @@ export default function HomeScreen() {
   }, [dispatch]);
   return (
   <div>
-      <Slider slides={slides} />
+      
       <h2>Top Sellers</h2>
       {loadingSellers ? (
         <LoadingBox></LoadingBox>
