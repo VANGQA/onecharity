@@ -8,6 +8,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { listProducts,} from '../actions/productActions';
 import { listTopSellers } from '../actions/userActions';
 import { Link } from 'react-router-dom';
+import Slider from './slider';
+import slides from './mock.json'
 
 import { MDBContainer, MDBRow, MDBCol, MDBRipple } from "mdb-react-ui-kit";
 
