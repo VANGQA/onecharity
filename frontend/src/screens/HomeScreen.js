@@ -32,6 +32,8 @@ export default function HomeScreen() {
   }, [dispatch]);
   return (
   <div>
+
+    <Slider slides={slides}/>
       
       <h2>Top Sellers</h2>
       {loadingSellers ? (
