@@ -1,8 +1,7 @@
 import Carousel from 'react-bootstrap/Carousel';
 import React, { useState } from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
-import Slider from './slider';
-import slides from './mock.json'
+
 
 
 function Slider({ slides }) {
