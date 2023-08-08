@@ -62,7 +62,6 @@ export default function HomeScreen() {
                   <p className="legend">{seller.seller.name}</p>
                 </Link>
               </div>
-            ))}
           </Carousel>
         </>
       )}
