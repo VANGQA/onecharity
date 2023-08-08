@@ -8,6 +8,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { listProducts,} from '../actions/productActions';
 import { listTopSellers } from '../actions/userActions';
 import { Link } from 'react-router-dom';
+import 'react-responsive-carousel/lib/styles/carousel.min.css';
 
 
 import { MDBContainer, MDBRow, MDBCol, MDBRipple } from "mdb-react-ui-kit";
@@ -33,6 +34,17 @@ export default function HomeScreen() {
   }, [dispatch]);
   return (
   <div>
+     <Carousel showThumbs={false} autoPlay>
+        {featuredProducts.map((product) => (
+          <div key={product._id}>
+            <Link href={`/product/${product.slug}`} passHref>
+              <a className="flex">
+                <img src={product.banner} alt={product.name} />
+              </a>
+            </Link>
+          </div>
+        ))}
+      </Carousel>
 
       <h2>Top Sellers</h2>
       {loadingSellers ? (
