@@ -40,8 +40,7 @@ export default function HomeScreen() {
                 <img src= alt="https://media.takealot.com/promotions/83540-top-banner.png" />
               </a>
           </div>  
-      </Carousel>
-
+    </Carousel>
     
   <div>
       <h2>Top Sellers</h2>
