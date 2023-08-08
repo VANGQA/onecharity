@@ -37,9 +37,9 @@ export default function HomeScreen() {
      <Carousel showThumbs={false} autoPlay>
         {featuredProducts.map((product) => (
           <div key={product._id}>
-            <Link href={`/product/${product.slug}`} passHref>
+            <Link src"https://media.takealot.com/promotions/82109-top-banner.png" passHref>
               <a className="flex">
-                <img src={product.banner} alt={product.name} />
+                <img src="https://media.takealot.com/promotions/82109-top-banner.png" alt={product.name} />
               </a>
             </Link>
           </div>
