@@ -36,11 +36,9 @@ export default function HomeScreen() {
   <div>
      <Carousel showThumbs={false} autoPlay>
           <div>
-            <Link href={`/product/${product.slug}`} passHref>
               <a className="flex">
                 <img src="https://media.takealot.com/promotions/82109-top-banner.png" alt={product.name} />
               </a>
-            </Link>
           </div>
         ))}
       </Carousel>
