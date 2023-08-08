@@ -51,7 +51,7 @@ export default function HomeScreen() {
                   <p className="legend">{seller.seller.name}</p>
                 </Link>
               </div>
-          </Carousel>
+           </Carousel>
         </>
       )}
         <MDBContainer fluid className="my-5 text-center">
