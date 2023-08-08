@@ -13,6 +13,11 @@ body {
 #root {
   height: 100%;
 }
+footer {
+  grid-area: footer;
+  background-color: #203040;
+  color: #ffffff;
+}
 
 /* Layout */
 .grid-container {
