@@ -39,6 +39,9 @@ export default function HomeScreen() {
               <a className="flex">
                 <img src="https://media.takealot.com/promotions/82109-top-banner.png" alt="slider" />
               </a>
+             <a className="flex">
+                <img src="https://media.takealot.com/promotions/82109-top-banner.png" alt="slider" />
+              </a>
           </div>
         ))}
       </Carousel>
