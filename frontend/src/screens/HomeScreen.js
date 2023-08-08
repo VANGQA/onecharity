@@ -33,18 +33,17 @@ export default function HomeScreen() {
     
   }, [dispatch]);
   return (
-  <div>
-     <Carousel showThumbs={false} autoPlay>
+
+    <Carousel showThumbs={false} autoPlay>
           <div>
               <a className="flex">
-                <img src="https://media.takealot.com/promotions/82109-top-banner.png" alt="slider" />
+                <img src= alt="https://media.takealot.com/promotions/83540-top-banner.png" />
               </a>
-             <a className="flex">
-                <img src="https://media.takealot.com/promotions/82109-top-banner.png" alt="slider" />
-              </a>
-          </div>
+          </div>  
       </Carousel>
 
+    
+  <div>
       <h2>Top Sellers</h2>
       {loadingSellers ? (
         <LoadingBox></LoadingBox>
