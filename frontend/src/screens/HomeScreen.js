@@ -34,16 +34,6 @@ export default function HomeScreen() {
   }, [dispatch]);
   return (
 
-    <Carousel showThumbs={false} autoPlay>
-         (
-          <div>
-              <a className="flex">
-                <img src= alt="https://media.takealot.com/promotions/83540-top-banner.png" />
-              </a>
-          </div>
-        )
-    </Carousel>
-    
   <div>
       <h2>Top Sellers</h2>
       {loadingSellers ? (
