@@ -35,11 +35,13 @@ export default function HomeScreen() {
   return (
 
     <Carousel showThumbs={false} autoPlay>
+         (
           <div>
               <a className="flex">
                 <img src= alt="https://media.takealot.com/promotions/83540-top-banner.png" />
               </a>
-          </div>  
+          </div>
+        )
     </Carousel>
     
   <div>
