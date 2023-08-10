@@ -14,15 +14,7 @@ dotenv.config();
 const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
-
-mongoose.connect(
-  process.env.MONGODB_URL || 'mongodb://localhost/curiosity-database'
-);
-app.use('/api/uploads', uploadRouter);
-app.use('/api/users', userRouter);
-app.use('/api/products', productRouter);
-app.use('/api/orders', orderRouter);
-app.get('/api/config/paypal', (req, res) => {
+app.get('/api/keys/paypal', (req, res) => {
   res.send(process.env.PAYPAL_CLIENT_ID || 'sb');
 });
 app.get('/api/config/google', (req, res) => {

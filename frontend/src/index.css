@@ -13,6 +13,11 @@ body {
 #root {
   height: 100%;
 }
+footer {
+  grid-area: footer;
+  background-color: #203040;
+  color: #ffffff;
+}
 
 /* Layout */
 .grid-container {
@@ -29,6 +34,7 @@ header {
   grid-area: header;
   background-color: #1d73cf;
 }
+
 main {
   grid-area: main;
   padding: 1rem;
@@ -462,3 +468,4 @@ img.large {
 .support-users .unread {
   background-color: #f02020;
 }
+
