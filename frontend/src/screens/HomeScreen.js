@@ -21,24 +21,24 @@ export default function HomeScreen() {
    
   }, [dispatch]);
   return (
-    <>
-      <Carousel>
-           <div>
-              <img src="https://m.media-amazon.com/images/I/51RPiINhM7L._SX1500_.jpg" height="100px" width="200px" />
-              <p>hello</p>
-            </div>
-           <div>
-              <img src="https://m.media-amazon.com/images/I/51RPiINhM7L._SX1500_.jpg" height="100px" width="200px" />
-              <p>hello</p>
-            </div>
-            <div>
-              <img src="https://m.media-amazon.com/images/I/51RPiINhM7L._SX1500_.jpg" height="100px" width="200px" />
-              <p>hello</p>
-            </div>
-        </Carousel>
-      </>
      
     <div>
+        <>
+            <Carousel>
+                <div>
+                    <img src="https://m.media-amazon.com/images/I/51RPiINhM7L._SX1500_.jpg" width="100px" height="200px" />
+                    <p >Legend 1</p>
+                </div>
+                <div>
+                    <img src=https://m.media-amazon.com/images/I/51RPiINhM7L._SX1500_.jpg" width="100px" height="200px" />
+                    <p >Legend 2</p>
+                </div>
+                <div>
+                    <img src="https://m.media-amazon.com/images/I/51RPiINhM7L._SX1500_.jpg" width="100px" height="200px" />
+                    <p >Legend 3</p>
+                </div>
+            </Carousel>
+         </>
       <h2>Featured Products</h2>
       {loading ? (
         <LoadingBox></LoadingBox>
