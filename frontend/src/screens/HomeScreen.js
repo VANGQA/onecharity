@@ -26,7 +26,7 @@ export default function HomeScreen() {
     dispatch(listTopSellers());
   }, [dispatch]);
   return (
-    <>
+      <>
         <Carousel>
             <div>
                 <img src="https://tpc.googlesyndication.com/simgad/436127923589322544?" height="100px" width="200px" />
@@ -41,7 +41,7 @@ export default function HomeScreen() {
                 <p className="legend">Legend 3</p>
             </div>
         </Carousel>
-    </>
+      </>
     <div>
       <h2>Top Sellers</h2>
       {loadingSellers ? (
