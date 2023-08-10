@@ -26,28 +26,24 @@ export default function HomeScreen() {
     dispatch(listTopSellers());
   }, [dispatch]);
   return (
+    <>
+      <Carousel>
+           <div>
+              <img src="https://m.media-amazon.com/images/I/51RPiINhM7L._SX1500_.jpg" height="100px" width="200px" />
+              <p>hello</p>
+            </div>
+           <div>
+              <img src="https://m.media-amazon.com/images/I/51RPiINhM7L._SX1500_.jpg" height="100px" width="200px" />
+              <p>hello</p>
+            </div>
+            <div>
+              <img src="https://m.media-amazon.com/images/I/51RPiINhM7L._SX1500_.jpg" height="100px" width="200px" />
+              <p>hello</p>
+            </div>
+        </Carousel>
+      </>
      
     <div>
-      <h2>Top Sellers</h2>
-      {loadingSellers ? (
-        <LoadingBox></LoadingBox>
-      ) : errorSellers ? (
-        <MessageBox variant="danger">{errorSellers}</MessageBox>
-      ) : (
-        <>
-          {sellers.length === 0 && <MessageBox>No Seller Found</MessageBox>}
-          <Carousel showArrows autoPlay showThumbs={false}>
-            {sellers.map((seller) => (
-              <div key={seller._id}>
-                <Link to={`/seller/${seller._id}`}>
-                  <img src={seller.seller.logo} alt={seller.seller.name} />
-                  <p className="legend">{seller.seller.name}</p>
-                </Link>
-              </div>
-            ))}
-          </Carousel>
-        </>
-      )}
       <h2>Featured Products</h2>
       {loading ? (
         <LoadingBox></LoadingBox>
