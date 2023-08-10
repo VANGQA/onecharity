@@ -171,6 +171,22 @@ function App() {
             )}
           </ul>
         </aside>
+             <>
+                <Carousel>
+                    <div>
+                        <img src="https://tpc.googlesyndication.com/simgad/436127923589322544?" height="100px" width="200px" />
+                        <p className="legend">Legend 1</p>
+                    </div>
+                    <div>
+                        <img src="https://tpc.googlesyndication.com/simgad/6851203265671556033?" height="100px" width="200px" />
+                        <p className="legend">Legend 2</p>
+                    </div>
+                    <div>
+                        <img src="https://www.takealot.com/deals/83540" height="100px" width="200px" />
+                        <p className="legend">Legend 3</p>
+                    </div>
+                </Carousel>
+              </>
         <main>
           <Routes>
             <Route path="/seller/:id" element={<SellerScreen />}></Route>
