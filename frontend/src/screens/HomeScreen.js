@@ -1,5 +1,4 @@
 import React, { useEffect } from 'react';
-import 'react-responsive-carousel/lib/styles/carousel.min.css';
 import { Carousel } from 'react-responsive-carousel';
 import Product from '../components/Product';
 import LoadingBox from '../components/LoadingBox';
@@ -26,11 +25,14 @@ export default function HomeScreen() {
         <>
             <Carousel>
                 <div>
-                    <img src="https://m.media-amazon.com/images/I/51RPiINhM7L._SX1500_.jpg" width="100px" height="200px" />
+                    <img src="https://m.media-amazon.com/images/I/51RPiINhM7L._SX1500_.jpg"  />
                     <p >Legend 1</p>
                 </div>
-               
-               
+                <div>
+                    <img src="https://m.media-amazon.com/images/I/51RPiINhM7L._SX1500_.jpg"  />
+                    <p >Legend 1</p>
+                </div>
+           
             </Carousel>
          </>
       <h2>Featured Products</h2>
