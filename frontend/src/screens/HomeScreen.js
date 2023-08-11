@@ -86,7 +86,7 @@ export default function HomeScreen() {
                 ))}
               </Swiper>
         
-      )}
+          )}
       <h2>Featured Products</h2>
       {loading ? (
         <LoadingBox></LoadingBox>
