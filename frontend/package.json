@@ -4,6 +4,7 @@
   "version": "0.1.0",
   "private": true,
   "dependencies": {
+    "@coreui/react": "^4.9.2",
     "@coreui/coreui": "^4.3.0",
     "@paypal/react-paypal-js": "^8.1.0",
     "@react-google-maps/api": "^2.19.2",
