@@ -6,13 +6,16 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 import store from './store';
 
-ReactDOM.render(
-  <Provider store={store}>
-    <React.StrictMode>
-      <App />
-    </React.StrictMode>
-  </Provider>,
-  document.getElementById('root')
+root.render(
+  <React.StrictMode>
+    <StoreProvider>
+      <HelmetProvider>
+        <PayPalScriptProvider deferLoading={true}>
+          <App />
+        </PayPalScriptProvider>
+      </HelmetProvider>
+    </StoreProvider>
+  </React.StrictMode>
 );
 
 // If you want your app to work offline and load faster, you can change
