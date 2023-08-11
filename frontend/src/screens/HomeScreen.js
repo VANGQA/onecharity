@@ -14,7 +14,6 @@ import { CImage } from '@coreui/react';
 import { CCard } from '@coreui/react';
 import { CCardBody } from '@coreui/react';
 import { CCardTitle } from '@coreui/react';
-import { CCarouselItem } from '@coreui/react';
 
 import {Swiper, SwiperSlide} from "swiper/react";
 import { Navigation, Pagination, Scrollbar, A11y, EffectCube } from 'swiper';
