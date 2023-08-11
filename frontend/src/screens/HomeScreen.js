@@ -9,6 +9,10 @@ import { listProducts } from '../actions/productActions';
 import { listTopSellers } from '../actions/userActions';
 import { Link } from 'react-router-dom';
 
+import {Swiper, SwiperSlide} from "swiper/react";
+import { Navigation, Pagination, Scrollbar, A11y, EffectCube } from 'swiper';
+import 'swiper/swiper-bundle.min.css';
+
 export default function HomeScreen() {
   const dispatch = useDispatch();
   const productList = useSelector((state) => state.productList);
@@ -35,17 +39,37 @@ export default function HomeScreen() {
       ) : (
         <>
           {sellers.length === 0 && <MessageBox>No Seller Found</MessageBox>}
-          <Carousel showArrows autoPlay showThumbs={false}>
-            {sellers.map((seller) => (
-              <div key={seller._id}>
-                <Link to={`/seller/${seller._id}`}>
-                  <img src={seller.seller.logo} alt={seller.seller.name} />
-                  <p className="legend">{seller.seller.name}</p>
-                </Link>
-              </div>
-            ))}
-          </Carousel>
-        </>
+          <Swiper
+            modules={[Navigation, Pagination, Scrollbar, A11y, EffectCube]}
+            spaceBetween={50}
+            slidesPerView={3}
+            navigation
+            pagination={{ clickable: true }}
+            scrollbar={{ draggable: true }}
+            onSlideChange={() => console.log('slide change')}
+            onSwiper={(swiper) => console.log(swiper)}
+            effect={"cube"}
+            cubeEffect={{
+              shadow: true,
+              slideShadows: true,
+              shadowOffset: 20,
+              shadowScale: 0.94,
+            }}
+        >
+            {seller.map((seller) => (
+                <SwiperSlide key={seller._id}>
+                    <Link to={`/seller/${seller._id}`}>
+                        <CCard>
+                            <CCardBody>
+                                <CCardTitle>{seller.seller.name}</CCardTitle>
+                                <CCardImage orientation="top" width="100%" src={seller.seller.logo} alt={seller.seller.name} />
+                             </CCardBody>
+                          </CCard>
+                       </Link>
+                   </SwiperSlide>
+                ))}
+              </Swiper>
+        
       )}
       <h2>Featured Products</h2>
       {loading ? (
