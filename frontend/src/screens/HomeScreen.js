@@ -30,7 +30,23 @@ export default function HomeScreen() {
     dispatch(listTopSellers());
   }, [dispatch]);
   return (
+    
     <div>
+        <>
+            <CCarousel controls indicators>
+                <CCarouselItem>
+                    <CImage className="d-block w-100" src={ReactImg} alt="slide 1" />
+                </CCarouselItem>
+                <CCarouselItem>
+                    <CImage className="d-block w-100" src={VueImg} alt="slide 2" />
+                </CCarouselItem>
+                <CCarouselItem>
+                    <CImage className="d-block w-100" src={AngularImg} alt="slide 3" />
+                </CCarouselItem>
+            </CCarousel>
+       </>
+
+    
       <h2>Top Sellers</h2>
       {loadingSellers ? (
         <LoadingBox></LoadingBox>
