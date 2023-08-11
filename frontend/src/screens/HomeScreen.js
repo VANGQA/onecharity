@@ -53,6 +53,7 @@ export default function HomeScreen() {
       ) : errorSellers ? (
         <MessageBox variant="danger">{errorSellers}</MessageBox>
       ) : (
+         <>
       
           {sellers.length === 0 && <MessageBox>No Seller Found</MessageBox>}
           <Swiper
@@ -85,6 +86,7 @@ export default function HomeScreen() {
                    </SwiperSlide>
                 ))}
               </Swiper>
+          </>
         
           )}
       <h2>Featured Products</h2>
