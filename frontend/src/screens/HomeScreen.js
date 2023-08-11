@@ -71,7 +71,7 @@ export default function HomeScreen() {
               shadowOffset: 20,
               shadowScale: 0.94,
             }}
-        >
+          >
             {seller.map((seller) => (
                 <SwiperSlide key={seller._id}>
                     <Link to={`/seller/${seller._id}`}>
