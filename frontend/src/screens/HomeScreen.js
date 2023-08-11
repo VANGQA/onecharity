@@ -47,22 +47,6 @@ export default function HomeScreen() {
           </Carousel>
         </>
       )}
-      <h2>Categories</h2>
-        <CRow>
-          <CCol sm={4}>
-            <CCard style={{ width: '18rem' }}>
-              <CCardImage orientation="top" src={ReactImg} />
-            </CCard>
-          </CCol>
-          <CCol sm={4}>
-            <CCard style={{ width: '18rem' }}>
-              <CCardImage orientation="top" src={ReactImg} />
-            </CCard>
-          </CCol>
- 
-        </CRow>
-
-        
       <h2>Featured Products</h2>
       {loading ? (
         <LoadingBox></LoadingBox>
