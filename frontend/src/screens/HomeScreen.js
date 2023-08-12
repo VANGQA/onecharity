@@ -70,9 +70,9 @@ export default function HomeScreen() {
             }} />
              <Slide
                background={{
-                backgroundImage:mylastSlider,
-                backgroundAttachment:"fixed"
-              }} />
+                 backgroundImage:mylastSlider,
+                 backgroundAttachment:"fixed"
+               }} />
              <Slide
                 background={{
                   backgroundImage:mylastSlider,
