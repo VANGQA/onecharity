@@ -67,20 +67,17 @@ export default function HomeScreen() {
             background={{
               backgroundImage:myfirstSlider,
               backgroundAttachment:"fixed"
-            }}
-          />
+            }} />
              <Slide
-            background={{
-              backgroundImage:mylastSlider,
-              backgroundAttachment:"fixed"
-            }}
-          />
+               background={{
+                backgroundImage:mylastSlider,
+                backgroundAttachment:"fixed"
+              }} />
              <Slide
-            background={{
-              backgroundImage:mylastSlider,
-              backgroundAttachment:"fixed"
-            }}
-          />
+                background={{
+                  backgroundImage:mylastSlider,
+                  backgroundAttachment:"fixed"
+                }} />
       </HeroSlider>
    </>
 
