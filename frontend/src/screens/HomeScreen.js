@@ -36,19 +36,9 @@ export default function HomeScreen() {
       <Carousel>
                 <div>
                     <img src="https://media.takealot.com/promotions/83540-top-banner.png" />
-                    
-                </div>
-                <div>
                     <img src="https://media.takealot.com/promotions/83540-top-banner.png" />
-                    
-                </div>
-                <div>
                     <img src="https://media.takealot.com/promotions/83540-top-banner.png" />
-                    
-                </div>
-                <div>
-                    <img src="https://media.takealot.com/promotions/83540-top-banner.png" />
-                   
+               
                 </div>
                 
             </Carousel>
