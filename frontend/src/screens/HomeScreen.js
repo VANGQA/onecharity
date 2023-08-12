@@ -15,6 +15,7 @@ import { CCard } from '@coreui/react';
 import { CCardBody } from '@coreui/react';
 import { CCardTitle } from '@coreui/react';
 import { CCardImage } from '@coreui/react';
+var Carousel = require('react-responsive-carousel').Carousel;
 
 
 import {Swiper, SwiperSlide} from "swiper/react";
@@ -41,17 +42,17 @@ export default function HomeScreen() {
     
     <div>
         <>
-            <CCarousel controls indicators>
-                <CCarouselItem>
-                    <CImage className="d-block w-100" src="https://media.takealot.com/promotions/83540-top-banner.png" alt="slide 1" />
-                </CCarouselItem>
-                <CCarouselItem>
-                    <CImage className="d-block w-100" src="https://media.takealot.com/promotions/83540-top-banner.png" alt="slide 2" />
-                </CCarouselItem>
-                <CCarouselItem>
-                    <CImage className="d-block w-100" src="https://media.takealot.com/promotions/83540-top-banner.png" alt="slide 3" />
-                </CCarouselItem>
-            </CCarousel>
+            <Carousel showArrows={true} onChange={onChange} onClickItem={onClickItem} onClickThumb={onClickThumb}>
+                <div>
+                    <img src="https://media.takealot.com/promotions/83540-top-banner.png" />
+                </div>
+                <div>
+                    <img src="https://media.takealot.com/promotions/83540-top-banner.png" />
+                </div>
+                <div>
+                    <img src="https://media.takealot.com/promotions/83540-top-banner.png" />
+                </div>
+            </Carousel>
        </>
 
     
