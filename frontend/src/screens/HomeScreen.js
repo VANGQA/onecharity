@@ -52,9 +52,8 @@ export default function HomeScreen() {
          onBeforeChange={(previousSlide, nextSlide)=>console.log("onBeforeChange", previousSlide,nextSlide)}
          onChange={nextSlide =>console.log("onChange", nextSlide)}
          onAfterChange={nextSlide =>console.log("onAfterChange", nextSlide)}
-         style={{
-           backgroundColor: "rgba(0,0,0,0.33)"
-         }}
+         style={{ backgroundColor: "rgba(0,0,0,0.33)" }}
+
          settings{{
            slidingDuration:250,
            slidingDelay:100,
