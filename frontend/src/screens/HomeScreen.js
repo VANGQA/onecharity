@@ -62,7 +62,6 @@ export default function HomeScreen() {
          autoplayDuration:5000,
          height: "100vh",
        }} >
-         <>
            <Slide
               background={{
                 backgroundImage:myfirstSlider,
@@ -78,8 +77,7 @@ export default function HomeScreen() {
                  backgroundImage:mylastSlider,
                  backgroundAttachment:"fixed"
                }} />
-          </>
-      </HeroSlider>
+         </HeroSlider>
    
 
       <h2>Featured Products</h2>
