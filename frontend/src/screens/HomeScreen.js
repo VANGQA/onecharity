@@ -62,7 +62,7 @@ export default function HomeScreen() {
          shouldDisplayButtons:true,
          autoplayDuration:5000,
          height: "100vh",
-       }}
+       }} >
          <Slide
             background={{
               backgroundImage:myfirstSlider,
