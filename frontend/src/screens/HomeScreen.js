@@ -84,46 +84,7 @@ export default function HomeScreen() {
           />
         
        </HeroSlider>
-    <>
-      <h2>Top Sellers</h2>
-      {loadingSellers ? (
-        <LoadingBox></LoadingBox>
-      ) : errorSellers ? (
-        <MessageBox variant="danger">{errorSellers}</MessageBox>
-      ) : (
-        
-          {sellers.length === 0 && <MessageBox>No Seller Found</MessageBox>}
-            <Swiper
-              modules={[Navigation, Pagination, Scrollbar, A11y, EffectCube]}
-              spaceBetween={50}
-              slidesPerView={3}
-              navigation
-              pagination={{ clickable: true }}
-              scrollbar={{ draggable: true }}
-              onSlideChange={() => console.log('slide change')}
-              onSwiper={(swiper) => console.log(swiper)}
-              effect={"cube"}
-              cubeEffect={{
-                shadow: true,
-                slideShadows: true,
-                shadowOffset: 20,
-                shadowScale: 0.94,
-              }}>
-              {sellers.map((seller) => (
-                <SwiperSlide key={seller._id}>
-                    <Link to={`/seller/${seller._id}`}>
-                        <CCard>
-                            <CCardBody>
-                                <CCardTitle>{seller.seller.name}</CCardTitle>
-                                <CCardImage orientation="top" width="100%" src={seller.seller.logo} alt={seller.seller.name} />
-                             </CCardBody>
-                          </CCard>
-                       </Link>
-                   </SwiperSlide>
-                ))}
-               </Swiper>
-            </>
-    
+  
       
       <h2>Featured Products</h2>
       {loading ? (
