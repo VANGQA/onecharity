@@ -44,48 +44,46 @@ export default function HomeScreen() {
     dispatch(listTopSellers());
   }, [dispatch]);
   return (
-   
-      <HeroSlider
-         slidingAnimation="left_to_right"
-         orientation="horizontal"
-         initialSlider={1}
-         onBeforeChange={(previousSlide, nextSlide)=>console.log("onBeforeChange", previousSlide,nextSlide)}
-         onChange={nextSlide =>console.log("onChange", nextSlide)}
-         onAfterChange={nextSlide =>console.log("onAfterChange", nextSlide)}
-         style={{ backgroundColor: "rgba(0,0,0,0.33)" }}
-
-         settings={{
-           slidingDuration:250,
-           slidingDelay:100,
-           shouldAutoplay:true,
-           shouldDisplayButtons:true,
-           autoplayDuration:5000,
-           height: "100vh",
-         }}
- 
-       >
-          <Slide
+   <>
+     <HeroSlider
+       slidingAnimation="left_to_right"
+       orientation="horizontal"
+       initialSlider={1}
+       onBeforeChange={(previousSlide, nextSlide)=>console.log("onBeforeChange", previousSlide,nextSlide)}
+       onChange={nextSlide =>console.log("onChange", nextSlide)}
+       onAfterChange={nextSlide =>console.log("onAfterChange", nextSlide)}
+       style={{ 
+         backgroundColor: "rgba(0,0,0,0.33)" 
+      }}
+       settings={{
+         slidingDuration:250,
+         slidingDelay:100,
+         shouldAutoplay:true,
+         shouldDisplayButtons:true,
+         autoplayDuration:5000,
+         height: "100vh",
+       }}
+         <Slide
             background={{
               backgroundImage:myfirstSlider,
               backgroundAttachment:"fixed"
             }}
           />
-          <Slide
-            background={{
-              backgroundImage:mysecondSlider,
-              backgroundAttachment:"fixed"
-            }}
-          />
-          <Slide
+             <Slide
             background={{
               backgroundImage:mylastSlider,
               backgroundAttachment:"fixed"
             }}
           />
-        
-       </HeroSlider>
-  
-      
+             <Slide
+            background={{
+              backgroundImage:mylastSlider,
+              backgroundAttachment:"fixed"
+            }}
+          />
+      </HeroSlider>
+   </>
+
       <h2>Featured Products</h2>
       {loading ? (
         <LoadingBox></LoadingBox>
