@@ -8,7 +8,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { listProducts } from '../actions/productActions';
 import { listTopSellers } from '../actions/userActions';
 import { Link } from 'react-router-dom';
-import HeroSlider, {slide} from 'hero-slider';
+import HeroSlider, {Slide} from 'hero-slider';
 
 const myfirstSlider="https://media.takealot.com/promotions/83540-top-banner.png";
 const mysecondSlider="https://media.takealot.com/promotions/83540-top-banner.png";
