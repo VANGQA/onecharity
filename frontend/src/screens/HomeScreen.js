@@ -11,8 +11,8 @@ import { Link } from 'react-router-dom';
 import HeroSlider, {Slide} from 'hero-slider';
 
 const myfirstSlider="https://media.takealot.com/promotions/83540-top-banner.png";
-const mysecondSlider="https://media.takealot.com/promotions/83540-top-banner.png";
-const mylastSlider="https://media.takealot.com/promotions/83540-top-banner.png";
+const mysecondSlider="https://media.takealot.com/promotions/app-only-top-banner.png";
+const mylastSlider="https://media.takealot.com/promotions/82109-top-banner.png";
 
 export default function HomeScreen() {
   const dispatch = useDispatch();
