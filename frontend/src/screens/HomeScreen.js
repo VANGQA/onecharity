@@ -33,46 +33,25 @@ export default function HomeScreen() {
   }, [dispatch]);
   return (
     <div>
-      <HeroSlider
-       slidingAnimation="left_to_right"
-       orientation="horizontal"
-       initialSlide={1}
-       onBeforeChange={(previousSlide, nextSlide)=>console.log("onBeforeChange", previousSlide,nextSlide)}
-       onChange={nextSlide => console.log("onChange", nextSlide)}
-       onAfterChange={nextSlide => console.log("onAfterChange", nextSlide)}
-       style={{ 
-         backgroundColor: "rgba(0,0,0,0.33)" 
-      }}
-       settings={{
-         slidingDuration:250,
-         slidingDelay:100,
-         shouldAutoplay:true,
-         shouldDisplayButtons:true,
-         autoplayDuration:5000,
-         height: "100%",
-         width:"100%",
-       }} >
-           <Slide
-              background={{
-                backgroundImage:takeaBanner,
-                backgroundAttachment:"fixed"
-              }} />
-            <Slide
-               background={{
-                 backgroundImage:takedProduct,
-                 backgroundAttachment:"fixed"
-               }} />
-            <Slide
-               background={{
-                 backgroundImage:afterProfuct,
-                 backgroundAttachment:"fixed"
-               }} />
-            <Slide
-               background={{
-                 backgroundImage:theProfuct,
-                 backgroundAttachment:"fixed"
-               }} />
-         </HeroSlider>
+      <Carousel showArrows={true} onChange={onChange} onClickItem={onClickItem} >
+                <div>
+                    <img src="https://media.takealot.com/promotions/83540-top-banner.png" />
+                    
+                </div>
+                <div>
+                    <img src="https://media.takealot.com/promotions/83540-top-banner.png" />
+                    
+                </div>
+                <div>
+                    <img src="https://media.takealot.com/promotions/83540-top-banner.png" />
+                    
+                </div>
+                <div>
+                    <img src="https://media.takealot.com/promotions/83540-top-banner.png" />
+                   
+                </div>
+                
+            </Carousel>
    
       <h2>Featured Products</h2>
       {loading ? (
