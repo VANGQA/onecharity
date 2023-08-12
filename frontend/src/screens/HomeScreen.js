@@ -44,7 +44,7 @@ export default function HomeScreen() {
     dispatch(listTopSellers());
   }, [dispatch]);
   return (
-    <>
+   
       <HeroSlider
          slidingAnimation="left_to_right"
          orientation="horizontal"
@@ -84,9 +84,7 @@ export default function HomeScreen() {
           />
         
        </HeroSlider>
-    </>
 
-    
       <h2>Top Sellers</h2>
       {loadingSellers ? (
         <LoadingBox></LoadingBox>
