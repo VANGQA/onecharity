@@ -54,7 +54,7 @@ export default function HomeScreen() {
          onAfterChange={nextSlide =>console.log("onAfterChange", nextSlide)}
          style={{ backgroundColor: "rgba(0,0,0,0.33)" }}
 
-         settings{{
+         settings={{
            slidingDuration:250,
            slidingDelay:100,
            shouldAutoplay:true,
