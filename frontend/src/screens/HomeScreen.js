@@ -15,7 +15,7 @@ import { CCard } from '@coreui/react';
 import { CCardBody } from '@coreui/react';
 import { CCardTitle } from '@coreui/react';
 import { CCardImage } from '@coreui/react';
-var Carousel = require('react-responsive-carousel').Carousel;
+
 
 
 import {Swiper, SwiperSlide} from "swiper/react";
