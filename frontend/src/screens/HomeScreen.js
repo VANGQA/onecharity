@@ -33,7 +33,7 @@ export default function HomeScreen() {
   }, [dispatch]);
   return (
     <div>
-      <Carousel showArrows={true} onChange={onChange} onClickItem={onClickItem} >
+      <Carousel>
                 <div>
                     <img src="https://media.takealot.com/promotions/83540-top-banner.png" />
                     
