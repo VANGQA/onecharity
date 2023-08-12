@@ -41,13 +41,13 @@ export default function HomeScreen() {
         <>
             <CCarousel controls indicators>
                 <CCarouselItem>
-                    <CImage className="d-block w-100" src={ReactImg} alt="slide 1" />
+                    <CImage className="d-block w-100" src="https://media.takealot.com/promotions/83540-top-banner.png" alt="slide 1" />
                 </CCarouselItem>
                 <CCarouselItem>
-                    <CImage className="d-block w-100" src={VueImg} alt="slide 2" />
+                    <CImage className="d-block w-100" src="https://media.takealot.com/promotions/83540-top-banner.png" alt="slide 2" />
                 </CCarouselItem>
                 <CCarouselItem>
-                    <CImage className="d-block w-100" src={AngularImg} alt="slide 3" />
+                    <CImage className="d-block w-100" src="https://media.takealot.com/promotions/83540-top-banner.png" alt="slide 3" />
                 </CCarouselItem>
             </CCarousel>
        </>
