@@ -44,7 +44,6 @@ export default function HomeScreen() {
     dispatch(listTopSellers());
   }, [dispatch]);
   return (
-   <>
      <HeroSlider
        slidingAnimation="left_to_right"
        orientation="horizontal"
@@ -63,23 +62,25 @@ export default function HomeScreen() {
          autoplayDuration:5000,
          height: "100vh",
        }} >
-         <Slide
-            background={{
-              backgroundImage:myfirstSlider,
-              backgroundAttachment:"fixed"
-            }} />
-             <Slide
+         <>
+           <Slide
+              background={{
+                backgroundImage:myfirstSlider,
+                backgroundAttachment:"fixed"
+              }} />
+            <Slide
                background={{
                  backgroundImage:mylastSlider,
                  backgroundAttachment:"fixed"
                }} />
-             <Slide
-                background={{
-                  backgroundImage:mylastSlider,
-                  backgroundAttachment:"fixed"
-                }} />
+            <Slide
+               background={{
+                 backgroundImage:mylastSlider,
+                 backgroundAttachment:"fixed"
+               }} />
+          </>
       </HeroSlider>
-   </>
+   
 
       <h2>Featured Products</h2>
       {loading ? (
