@@ -48,7 +48,8 @@ export default function HomeScreen() {
          shouldAutoplay:true,
          shouldDisplayButtons:true,
          autoplayDuration:5000,
-         height: "100vh",
+         height: "100%",
+         width:"100%",
        }} >
            <Slide
               background={{
