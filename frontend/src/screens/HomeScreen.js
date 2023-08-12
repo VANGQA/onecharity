@@ -15,12 +15,17 @@ import { CCard } from '@coreui/react';
 import { CCardBody } from '@coreui/react';
 import { CCardTitle } from '@coreui/react';
 import { CCardImage } from '@coreui/react';
+import HeroSlider {Slide} from 'hero-slider';
 
 
 
 import {Swiper, SwiperSlide} from "swiper/react";
 import { Navigation, Pagination, Scrollbar, A11y, EffectCube } from 'swiper';
 import 'swiper/swiper-bundle.min.css';
+
+const myfirstSlider="https://media.takealot.com/promotions/83540-top-banner.png";
+const mysecondSlider="https://media.takealot.com/promotions/83540-top-banner.png";
+const mylastSlider="https://media.takealot.com/promotions/83540-top-banner.png";
 
 export default function HomeScreen() {
   const dispatch = useDispatch();
@@ -39,21 +44,45 @@ export default function HomeScreen() {
     dispatch(listTopSellers());
   }, [dispatch]);
   return (
-    
-    <div>
-        <>
-            <Carousel showArrows={true} onChange={onChange} onClickItem={onClickItem} onClickThumb={onClickThumb}>
-                <div>
-                    <img src="https://media.takealot.com/promotions/83540-top-banner.png" />
-                </div>
-                <div>
-                    <img src="https://media.takealot.com/promotions/83540-top-banner.png" />
-                </div>
-                <div>
-                    <img src="https://media.takealot.com/promotions/83540-top-banner.png" />
-                </div>
-            </Carousel>
-       </>
+    <>
+      <HeroSlider
+         slidingAnimation="left_to_right"
+         orientation="horizontal"
+         initialSlider={1}
+         onBeforeChange={(previousSlide, nextSlide)=>console.log("onBeforeChange", previousSlide,nextSlide)}
+         onChange={nextSlide =>console.log("onChange", nextSlide)}
+         onAfterChange={nextSlide =>console.log("onAfterChange", nextSlide)}
+         style={{
+           backgroundColor:rgba(0,0,0,0.33)
+         }}
+         settings{{
+           slidingDuration:250,
+           slidingDelay:100,
+           shouldAutoplay:true,
+           shouldDisplayButtons:true,
+           autoplayDuration:5000,
+           height="100vh",
+         }}
+ 
+       >
+          <Slide
+            background={{
+              backgroundImage:myfirstSlider,
+              backgroundAttachment:"fixed" 
+          />
+          <Slide
+            background={{
+              backgroundImage:mysecondSlider,
+              backgroundAttachment:"fixed" 
+          />
+          <Slide
+            background={{
+              backgroundImage:mylastSlider,
+              backgroundAttachment:"fixed" 
+          />
+        
+       </HeroSlider>
+    </>
 
     
       <h2>Top Sellers</h2>
