@@ -84,14 +84,14 @@ export default function HomeScreen() {
           />
         
        </HeroSlider>
-
+    <>
       <h2>Top Sellers</h2>
       {loadingSellers ? (
         <LoadingBox></LoadingBox>
       ) : errorSellers ? (
         <MessageBox variant="danger">{errorSellers}</MessageBox>
       ) : (
-        <>
+        
           {sellers.length === 0 && <MessageBox>No Seller Found</MessageBox>}
             <Swiper
               modules={[Navigation, Pagination, Scrollbar, A11y, EffectCube]}
@@ -124,7 +124,7 @@ export default function HomeScreen() {
                </Swiper>
             </>
     
-          )}
+      
       <h2>Featured Products</h2>
       {loading ? (
         <LoadingBox></LoadingBox>
