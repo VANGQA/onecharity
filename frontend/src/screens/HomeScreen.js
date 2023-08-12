@@ -15,7 +15,7 @@ import { CCard } from '@coreui/react';
 import { CCardBody } from '@coreui/react';
 import { CCardTitle } from '@coreui/react';
 import { CCardImage } from '@coreui/react';
-import HeroSlider {Slide} from 'hero-slider';
+import HeroSlider, {Slide} from 'hero-slider';
 
 
 
