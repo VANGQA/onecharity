@@ -27,26 +27,41 @@ export default function HomeScreen() {
   }, [dispatch]);
   return (
     <div>
-      <h2>Top Sellers</h2>
-      {loadingSellers ? (
-        <LoadingBox></LoadingBox>
-      ) : errorSellers ? (
-        <MessageBox variant="danger">{errorSellers}</MessageBox>
-      ) : (
-        <>
-          {sellers.length === 0 && <MessageBox>No Seller Found</MessageBox>}
-          <Carousel showArrows autoPlay showThumbs={false}>
-            {sellers.map((seller) => (
-              <div key={seller._id}>
-                <Link to={`/seller/${seller._id}`}>
-                  <img src={seller.seller.logo} alt={seller.seller.name} />
-                  <p className="legend">{seller.seller.name}</p>
-                </Link>
-              </div>
-            ))}
-          </Carousel>
-        </>
-      )}
+      <HeroSlider
+       slidingAnimation="left_to_right"
+       orientation="horizontal"
+       initialSlider={1}
+       onBeforeChange={(previousSlide, nextSlide)=>console.log("onBeforeChange", previousSlide,nextSlide)}
+       onChange={nextSlide =>console.log("onChange", nextSlide)}
+       onAfterChange={nextSlide =>console.log("onAfterChange", nextSlide)}
+       style={{ 
+         backgroundColor: "rgba(0,0,0,0.33)" 
+      }}
+       settings={{
+         slidingDuration:250,
+         slidingDelay:100,
+         shouldAutoplay:true,
+         shouldDisplayButtons:true,
+         autoplayDuration:5000,
+         height: "100vh",
+       }} >
+           <Slide
+              background={{
+                backgroundImage:myfirstSlider,
+                backgroundAttachment:"fixed"
+              }} />
+            <Slide
+               background={{
+                 backgroundImage:mylastSlider,
+                 backgroundAttachment:"fixed"
+               }} />
+            <Slide
+               background={{
+                 backgroundImage:mylastSlider,
+                 backgroundAttachment:"fixed"
+               }} />
+         </HeroSlider>
+   
       <h2>Featured Products</h2>
       {loading ? (
         <LoadingBox></LoadingBox>
