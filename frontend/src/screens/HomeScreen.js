@@ -91,26 +91,25 @@ export default function HomeScreen() {
       ) : errorSellers ? (
         <MessageBox variant="danger">{errorSellers}</MessageBox>
       ) : (
-      
+        <>
           {sellers.length === 0 && <MessageBox>No Seller Found</MessageBox>}
-          <Swiper
-            modules={[Navigation, Pagination, Scrollbar, A11y, EffectCube]}
-            spaceBetween={50}
-            slidesPerView={3}
-            navigation
-            pagination={{ clickable: true }}
-            scrollbar={{ draggable: true }}
-            onSlideChange={() => console.log('slide change')}
-            onSwiper={(swiper) => console.log(swiper)}
-            effect={"cube"}
-            cubeEffect={{
-              shadow: true,
-              slideShadows: true,
-              shadowOffset: 20,
-              shadowScale: 0.94,
-            }}
-          >
-            {sellers.map((seller) => (
+            <Swiper
+              modules={[Navigation, Pagination, Scrollbar, A11y, EffectCube]}
+              spaceBetween={50}
+              slidesPerView={3}
+              navigation
+              pagination={{ clickable: true }}
+              scrollbar={{ draggable: true }}
+              onSlideChange={() => console.log('slide change')}
+              onSwiper={(swiper) => console.log(swiper)}
+              effect={"cube"}
+              cubeEffect={{
+                shadow: true,
+                slideShadows: true,
+                shadowOffset: 20,
+                shadowScale: 0.94,
+              }}>
+              {sellers.map((seller) => (
                 <SwiperSlide key={seller._id}>
                     <Link to={`/seller/${seller._id}`}>
                         <CCard>
@@ -122,7 +121,8 @@ export default function HomeScreen() {
                        </Link>
                    </SwiperSlide>
                 ))}
-              </Swiper>
+               </Swiper>
+          </>
     
           )}
       <h2>Featured Products</h2>
