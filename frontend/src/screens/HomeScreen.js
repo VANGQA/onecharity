@@ -10,9 +10,10 @@ import { listTopSellers } from '../actions/userActions';
 import { Link } from 'react-router-dom';
 import HeroSlider, {Slide} from 'hero-slider';
 
-const myfirstSlider="https://media.takealot.com/promotions/83540-top-banner.png";
-const mysecondSlider="https://media.takealot.com/promotions/app-only-top-banner.png";
-const mylastSlider="https://media.takealot.com/promotions/82109-top-banner.png";
+const takeaBanner="https://media.takealot.com/promotions/83540-top-banner.png";
+const takedProduct="https://media.takealot.com/promotions/app-only-top-banner.png";
+const afterProfuct="https://media.takealot.com/promotions/82109-top-banner.png";
+const theProfuct="https://media.takealot.com/promotions/82109-top-banner.png";
 
 export default function HomeScreen() {
   const dispatch = useDispatch();
@@ -53,17 +54,22 @@ export default function HomeScreen() {
        }} >
            <Slide
               background={{
-                backgroundImage:myfirstSlider,
+                backgroundImage:takeaBanner,
                 backgroundAttachment:"fixed"
               }} />
             <Slide
                background={{
-                 backgroundImage:mysecondSlider,
+                 backgroundImage:takedProduct,
                  backgroundAttachment:"fixed"
                }} />
             <Slide
                background={{
-                 backgroundImage:mylastSlider,
+                 backgroundImage:afterProfuct,
+                 backgroundAttachment:"fixed"
+               }} />
+            <Slide
+               background={{
+                 backgroundImage:theProfuct,
                  backgroundAttachment:"fixed"
                }} />
          </HeroSlider>
