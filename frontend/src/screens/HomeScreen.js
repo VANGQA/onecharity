@@ -37,8 +37,8 @@ export default function HomeScreen() {
        orientation="horizontal"
        initialSlide={1}
        onBeforeChange={(previousSlide, nextSlide)=>console.log("onBeforeChange", previousSlide,nextSlide)}
-       onChange={nextSlide =>console.log("onChange", nextSlide)}
-       onAfterChange={nextSlide =>console.log("onAfterChange", nextSlide)}
+       onChange={nextSlide => console.log("onChange", nextSlide)}
+       onAfterChange={nextSlide => console.log("onAfterChange", nextSlide)}
        style={{ 
          backgroundColor: "rgba(0,0,0,0.33)" 
       }}
