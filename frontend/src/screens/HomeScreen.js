@@ -122,7 +122,7 @@ export default function HomeScreen() {
                    </SwiperSlide>
                 ))}
                </Swiper>
-          </>
+            </>
     
           )}
       <h2>Featured Products</h2>
