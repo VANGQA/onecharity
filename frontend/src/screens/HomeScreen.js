@@ -35,7 +35,7 @@ export default function HomeScreen() {
       <HeroSlider
        slidingAnimation="left_to_right"
        orientation="horizontal"
-       initialSlider={1}
+       initialSlide={1}
        onBeforeChange={(previousSlide, nextSlide)=>console.log("onBeforeChange", previousSlide,nextSlide)}
        onChange={nextSlide =>console.log("onChange", nextSlide)}
        onAfterChange={nextSlide =>console.log("onAfterChange", nextSlide)}
