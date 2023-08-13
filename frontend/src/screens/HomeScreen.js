@@ -72,7 +72,7 @@ export default function HomeScreen() {
        </CCol>
   </CRow>
      
-      <h2>Featured Products</h2>
+      <h2>Featured Product</h2>
       {loading ? (
         <LoadingBox></LoadingBox>
       ) : error ? (
