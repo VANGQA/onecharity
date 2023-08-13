@@ -3,24 +3,18 @@ html {
   box-sizing: border-box;
 }
 body {
-  margin: 0;
-  height: 100vh;
-  font-size: 1.6rem;
-  font-family: Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+    margin: 0;
+    padding: 0;
+    background: #f4f4f4;
+    font-family: "Helvetica Neue",Helvetica,Roboto,Arial,sans-serif;
+    font-weight: normal;
+    line-height: 1.5;
+    color: #0a0a0a;
+    -webkit-font-smoothing: antialiased;
 }
 #root {
   height: 100%;
 }
-
-h1{
-  font-size:16px;
-  text-align:left;
-  margin:6px 0 10px;
-  color: #4a4a4a;
-}
-
 
 /* Layout */
 .grid-container {
