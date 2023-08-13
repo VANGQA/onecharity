@@ -52,22 +52,22 @@ export default function HomeScreen() {
     <CRow>
       <CCol sm={3}>
         <CCard className="mb-3">
-          <CCardImage orientation="top" src="https://onlineshop.oxfam.org.uk/file/v1159565107154890854/general/homepage-books-274x330.jpg" />
+          <CCardImage orientation="top" src="https://media.takealot.com/covers_images/071764cf302d4c388fc999b4e497bc52/s-pdpxl.file" />
          </CCard>
        </CCol>
        <CCol sm={3}>
         <CCard className="mb-3">
-          <CCardImage orientation="top" src="https://onlineshop.oxfam.org.uk/file/v1159565107154890854/general/homepage-books-200x300.jpg" />
+          <CCardImage orientation="top" src="https://media.takealot.com/covers_images/071764cf302d4c388fc999b4e497bc52/s-pdpxl.file" />
          </CCard>
        </CCol>
        <CCol sm={3}>
         <CCard className="mb-3">
-          <CCardImage orientation="top" src="https://onlineshop.oxfam.org.uk/file/v1159565107154890854/general/homepage-books-200x300.jpg" />
+          <CCardImage orientation="top" src="https://media.takealot.com/covers_images/071764cf302d4c388fc999b4e497bc52/s-pdpxl.file" />
          </CCard>
        </CCol>
        <CCol sm={3}>
         <CCard className="mb-3">
-          <CCardImage orientation="top" src="https://onlineshop.oxfam.org.uk/file/v1159565107154890854/general/homepage-books-200x300.jpg" />
+          <CCardImage orientation="top" src="https://media.takealot.com/covers_images/071764cf302d4c388fc999b4e497bc52/s-pdpxl.file" />
          </CCard>
        </CCol>
   </CRow>
