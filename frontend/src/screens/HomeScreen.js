@@ -61,7 +61,7 @@ export default function HomeScreen() {
        </CCol>
        <CCol sm={4}>
         <CCard className="mb-3">
-          <CCardImage orientation="top" src="https://onlineshop.oxfam.org.uk/file/v7046122242207101323/general/274x330-HPSbO.jpg" />
+          <CCardImage orientation="top" src="https://onlineshop.oxfam.org.uk/file/v7232427292415486209/general/homepage-music-274x330.jpg" />
          </CCard>
        </CCol>
   </CRow>
