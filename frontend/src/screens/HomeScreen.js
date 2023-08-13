@@ -49,6 +49,7 @@ export default function HomeScreen() {
      
       </Carousel>
     <CRow>
+    <h1>Categories</h1>
       <CCol sm={4}>
         <CCard className="mb-3">
           <CCardImage orientation="top" src="https://onlineshop.oxfam.org.uk/file/v1159565107154890854/general/homepage-books-274x330.jpg" />
