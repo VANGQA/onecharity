@@ -9,6 +9,13 @@ import { listProducts } from '../actions/productActions';
 import { listTopSellers } from '../actions/userActions';
 import { Link } from 'react-router-dom';
 
+import { CCardTitle } from '@coreui/react';
+import { CCardText } from '@coreui/react';
+import { CCardImage } from '@coreui/react';
+import { CCardBody } from '@coreui/react';
+import { CCard } from '@coreui/react';
+import { CCol } from '@coreui/react';
+
 export default function HomeScreen() {
   const dispatch = useDispatch();
   const productList = useSelector((state) => state.productList);
@@ -40,6 +47,23 @@ export default function HomeScreen() {
           </div>
      
       </Carousel>
+    <CRow>
+      <CCol sm={4}>
+        <CCard className="mb-3">
+          <CCardImage orientation="top" src="https://onlineshop.oxfam.org.uk/file/v1159565107154890854/general/homepage-books-274x330.jpg" />
+         </CCard>
+       </CCol>
+       <CCol sm={4}>
+        <CCard className="mb-3">
+          <CCardImage orientation="top" src="https://onlineshop.oxfam.org.uk/file/v7046122242207101323/general/274x330-HPSbO.jpg" />
+         </CCard>
+       </CCol>
+       <CCol sm={4}>
+        <CCard className="mb-3">
+          <CCardImage orientation="top" src="https://onlineshop.oxfam.org.uk/file/v590687969995374402/general/500x350-toys.jpg" />
+         </CCard>
+       </CCol>
+  </CRow>
      
       <h2>Featured Products</h2>
       {loading ? (
