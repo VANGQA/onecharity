@@ -30,13 +30,13 @@ export default function HomeScreen() {
     <Carousel showThumbs={false} autoPlay>
        
           <div>
-            <img src="https://tpc.googlesyndication.com/simgad/12652662985575046320?" width="300px" height="200px" />
+            <img src="https://tpc.googlesyndication.com/simgad/12652662985575046320?" width="100%" height="100%" />
           </div>
            <div>
-            <img src="https://tpc.googlesyndication.com/simgad/12652662985575046320?" width="300px" height="200px" />
+            <img src="https://tpc.googlesyndication.com/simgad/12652662985575046320?" width="100%" height="100%"/>
           </div>
            <div>
-            <img src="https://tpc.googlesyndication.com/simgad/12652662985575046320?" width="300px" height="200px" />
+            <img src="https://tpc.googlesyndication.com/simgad/12652662985575046320?" width="100%" height="100%" />
           </div>
      
       </Carousel>
