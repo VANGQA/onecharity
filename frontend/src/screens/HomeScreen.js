@@ -51,17 +51,17 @@ export default function HomeScreen() {
     <CRow>
       <CCol sm={4}>
         <CCard className="mb-3">
-          <CCardImage orientation="top" src="https://images-na.ssl-images-amazon.com/images/G/01/AMAZON_FASHION/2022/SITE_FLIPS/SPR_22/GW/DQC/DQC_APR_TBYB_W_DRESSES_1x._SY116_CB623353881_.jpg" />
+          <CCardImage orientation="top" src="https://onlineshop.oxfam.org.uk/file/v1159565107154890854/general/homepage-books-274x330.jpg" />
          </CCard>
        </CCol>
        <CCol sm={4}>
         <CCard className="mb-3">
-          <CCardImage orientation="top" src="https://images-na.ssl-images-amazon.com/images/G/01/AMAZON_FASHION/2022/SITE_FLIPS/SPR_22/GW/DQC/DQC_APR_TBYB_W_DRESSES_1x._SY116_CB623353881_.jpg" />
+          <CCardImage orientation="top" src="https://onlineshop.oxfam.org.uk/file/v7046122242207101323/general/274x330-HPSbO.jpg" />
          </CCard>
        </CCol>
        <CCol sm={4}>
         <CCard className="mb-3">
-          <CCardImage orientation="top" src="https://images-na.ssl-images-amazon.com/images/G/01/AMAZON_FASHION/2022/SITE_FLIPS/SPR_22/GW/DQC/DQC_APR_TBYB_W_DRESSES_1x._SY116_CB623353881_.jpg" />
+          <CCardImage orientation="top" src="https://onlineshop.oxfam.org.uk/file/v7497096740927170021/general/homepage-homeware-274x330.jpg" />
          </CCard>
        </CCol>
   </CRow>
