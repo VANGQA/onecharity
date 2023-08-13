@@ -409,10 +409,7 @@ function App() {
                 href="#"
                 icon={BsGithub}
               />
-              <Footer.Icon
-                href="#"
-                icon={BsDribbble}
-              />
+              
             </div>
           </div>
         </div>
