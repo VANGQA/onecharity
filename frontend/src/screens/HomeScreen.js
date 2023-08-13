@@ -11,12 +11,6 @@ import HeroSlider, {Slide} from 'hero-slider';
 import Carousel from 'react-bootstrap/Carousel';
 
 
-function ControlledCarousel() {
-  const [index, setIndex] = useState(0);
-
-  const handleSelect = (selectedIndex) => {
-    setIndex(selectedIndex);
-  };
 
 export default function HomeScreen() {
   const dispatch = useDispatch();
@@ -29,6 +23,14 @@ export default function HomeScreen() {
     error: errorSellers,
     users: sellers,
   } = userTopSellersList;
+
+  function ControlledCarousel() {
+  const [index, setIndex] = useState(0);
+
+  const handleSelect = (selectedIndex) => {
+    setIndex(selectedIndex);
+  };
+
 
   useEffect(() => {
     dispatch(listProducts({}));
