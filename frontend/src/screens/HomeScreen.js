@@ -38,7 +38,7 @@ export default function HomeScreen() {
            <div>
             <img src="https://tpc.googlesyndication.com/simgad/12652662985575046320?"  />
           </div>
-        ))}
+     
       </Carousel>
      
       <h2>Featured Products</h2>
