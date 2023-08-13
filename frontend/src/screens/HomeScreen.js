@@ -54,14 +54,20 @@ export default function HomeScreen() {
         <CCard className="mb-3">
           <CCardImage orientation="top" src="https://onlineshop.oxfam.org.uk/file/v1159565107154890854/general/homepage-books-274x330.jpg" />
          </CCard>
-         <CCard className="mb-3">
-          <CCardImage orientation="top" src="https://onlineshop.oxfam.org.uk/file/v1159565107154890854/general/homepage-books-274x330.jpg" />
+       </CCol>
+       <CCol sm={3}>
+        <CCard className="mb-3">
+          <CCardImage orientation="top" src="https://onlineshop.oxfam.org.uk/file/v1159565107154890854/general/homepage-books-200x300.jpg" />
          </CCard>
-         <CCard className="mb-3">
-          <CCardImage orientation="top" src="https://onlineshop.oxfam.org.uk/file/v1159565107154890854/general/homepage-books-274x330.jpg" />
+       </CCol>
+       <CCol sm={3}>
+        <CCard className="mb-3">
+          <CCardImage orientation="top" src="https://onlineshop.oxfam.org.uk/file/v1159565107154890854/general/homepage-books-200x300.jpg" />
          </CCard>
-         <CCard className="mb-3">
-          <CCardImage orientation="top" src="https://onlineshop.oxfam.org.uk/file/v1159565107154890854/general/homepage-books-274x330.jpg" />
+       </CCol>
+       <CCol sm={3}>
+        <CCard className="mb-3">
+          <CCardImage orientation="top" src="https://onlineshop.oxfam.org.uk/file/v1159565107154890854/general/homepage-books-200x300.jpg" />
          </CCard>
        </CCol>
   </CRow>
