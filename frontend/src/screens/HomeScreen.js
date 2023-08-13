@@ -56,12 +56,12 @@ export default function HomeScreen() {
        </CCol>
        <CCol sm={4}>
         <CCard className="mb-3">
-          <CCardImage orientation="https://onlineshop.oxfam.org.uk/file/v7497096740927170021/general/homepage-homeware-274x330.jpg" />
+          <CCardImage orientation="top" src="https://onlineshop.oxfam.org.uk/file/v1159565107154890854/general/homepage-books-274x330.jpg" />
          </CCard>
        </CCol>
        <CCol sm={4}>
         <CCard className="mb-3">
-          <CCardImage orientation="top" src="https://onlineshop.oxfam.org.uk/file/v7232427292415486209/general/homepage-music-274x330.jpg" />
+          <CCardImage orientation="top" src="https://onlineshop.oxfam.org.uk/file/v1159565107154890854/general/homepage-books-274x330.jpg" />
          </CCard>
        </CCol>
   </CRow>
