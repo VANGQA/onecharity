@@ -9,7 +9,7 @@ import { listTopSellers } from '../actions/userActions';
 import { Link } from 'react-router-dom';
 import HeroSlider, {Slide} from 'hero-slider';
 import Carousel from 'react-bootstrap/Carousel';
-import ExampleCarouselImage from 'components/ExampleCarouselImage';
+
 
 function ControlledCarousel() {
   const [index, setIndex] = useState(0);
