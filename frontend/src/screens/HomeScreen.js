@@ -15,6 +15,7 @@ import { CCardImage } from '@coreui/react';
 import { CCardBody } from '@coreui/react';
 import { CCard } from '@coreui/react';
 import { CCol } from '@coreui/react';
+import { CRow } from '@coreui/react';
 
 export default function HomeScreen() {
   const dispatch = useDispatch();
