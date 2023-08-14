@@ -317,106 +317,70 @@ function App() {
             <Route path="/" element={<HomeScreen />} exact></Route>
           </Routes>
         </main>
-       <Footer bgDark>
-        <div className="w-full">
-          <div className="grid w-full grid-cols-2 gap-8 px-6 py-8 md:grid-cols-4">
-            <div>
-              <Footer.Title title="Company" />
-              <Footer.LinkGroup col>
-                <Footer.Link href="#">
-                  About
-                </Footer.Link>
-                <Footer.Link href="#">
-                  Careers
-                </Footer.Link>
-                <Footer.Link href="#">
-                  Brand Center
-                </Footer.Link>
-                <Footer.Link href="#">
-                  Blog
-                </Footer.Link>
-              </Footer.LinkGroup>
+           <footer>
+            <div className="content">
+              <div className="top">
+                <div className="logo-details">
+                  <i className="fab fa-slack"></i>
+                  <span className="logo_name">CodingLab</span>
+                </div>
+                <div className="media-icons">
+                  <a href="#"><i className="fab fa-facebook-f"></i></a>
+                  <a href="#"><i className="fab fa-twitter"></i></a>
+                  <a href="#"><i className="fab fa-instagram"></i></a>
+                  <a href="#"><i className="fab fa-linkedin-in"></i></a>
+                  <a href="#"><i className="fab fa-youtube"></i></a>
+                </div>
+              </div>
+              <div className="link-boxes">
+                <ul className="box">
+                  <li className="link_name">Company</li>
+                  <li><a href="#">Home</a></li>
+                  <li><a href="#">Contact us</a></li>
+                  <li><a href="#">About us</a></li>
+                  <li><a href="#">Get started</a></li>
+                </ul>
+                <ul className="box">
+                  <li className="link_name">Services</li>
+                  <li><a href="#">App design</a></li>
+                  <li><a href="#">Web design</a></li>
+                  <li><a href="#">Logo design</a></li>
+                  <li><a href="#">Banner design</a></li>
+                </ul>
+                <ul className="box">
+                  <li className="link_name">Account</li>
+                  <li><a href="#">Profile</a></li>
+                  <li><a href="#">My account</a></li>
+                  <li><a href="#">Prefrences</a></li>
+                  <li><a href="#">Purchase</a></li>
+                </ul>
+                <ul className="box">
+                  <li className="link_name">Courses</li>
+                  <li><a href="#">HTML & CSS</a></li>
+                  <li><a href="#">JavaScript</a></li>
+                  <li><a href="#">Photography</a></li>
+                  <li><a href="#">Photoshop</a></li>
+                </ul>
+                <ul className="box input-box">
+                  <li className="link_name">Subscribe</li>
+                  <li><input type="text" placeholder="Enter your email" /></li>
+                  <li><input type="button" value="Subscribe" /></li>
+                </ul>
+              </div>
             </div>
-            <div>
-              <Footer.Title title="help center" />
-              <Footer.LinkGroup col>
-                <Footer.Link href="#">
-                  Discord Server
-                </Footer.Link>
-                <Footer.Link href="#">
-                  Twitter
-                </Footer.Link>
-                <Footer.Link href="#">
-                  Facebook
-                </Footer.Link>
-                <Footer.Link href="#">
-                  Contact Us
-                </Footer.Link>
-              </Footer.LinkGroup>
+            <div className="bottom-details">
+              <div className="bottom_text">
+                <span className="copyright_text"
+                  >Copyright © 2021 <a href="#">CodingLab.</a>All rights
+                  reserved</span
+                >
+                <span className="policy_terms">
+                  <a href="#">Privacy policy</a>
+                  <a href="#">Terms & condition</a>
+                </span>
+              </div>
             </div>
-            <div>
-              <Footer.Title title="legal" />
-              <Footer.LinkGroup col>
-                <Footer.Link href="#">
-                  Privacy Policy
-                </Footer.Link>
-                <Footer.Link href="#">
-                  Licensing
-                </Footer.Link>
-                <Footer.Link href="#">
-                  Terms & Conditions
-                </Footer.Link>
-              </Footer.LinkGroup>
-            </div>
-            <div>
-              <Footer.Title title="download" />
-              <Footer.LinkGroup col>
-                <Footer.Link href="#">
-                  iOS
-                </Footer.Link>
-                <Footer.Link href="#">
-                  Android
-                </Footer.Link>
-                <Footer.Link href="#">
-                  Windows
-                </Footer.Link>
-                <Footer.Link href="#">
-                  MacOS
-                </Footer.Link>
-              </Footer.LinkGroup>
-            </div>
-          </div>
-          <div className="w-full bg-gray-700 px-4 py-6 sm:flex sm:items-center sm:justify-between">
-            <Footer.Copyright
-              by="Flowbite™"
-              href="#"
-              year={2022}
-            />
-            <div className="mt-4 flex space-x-6 sm:mt-0 sm:justify-center">
-              <Footer.Icon
-                href="#"
-                icon={BsFacebook}
-              />
-              <Footer.Icon
-                href="#"
-                icon={BsInstagram}
-              />
-              <Footer.Icon
-                href="#"
-                icon={BsTwitter}
-              />
-              <Footer.Icon
-                href="#"
-                icon={BsGithub}
-              />
-              
-            </div>
-          </div>
-        </div>
-    </Footer>
-
-
-
+          </footer>
               
       </div>
     </BrowserRouter>
