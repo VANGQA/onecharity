@@ -31,7 +31,7 @@ header {
   grid-area: header;
   background-color: #1d73cf;
 }
-
+/* footer */
 footer {
   position: fixed;
   background: #011c39;
@@ -262,6 +262,7 @@ footer .bottom-details .bottom_text {
     width: 100%;
   }
 }
+/* footer end */
 
 
 main {
