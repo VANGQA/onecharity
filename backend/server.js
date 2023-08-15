@@ -1,5 +1,6 @@
 import http from 'http';
 import { Server } from 'socket.io';
+import connectDB from './config/db.js';
 import express from 'express';
 import mongoose from 'mongoose';
 import dotenv from 'dotenv';
