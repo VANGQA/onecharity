@@ -52,37 +52,6 @@ export default function HomeScreen() {
           </div>
      
       </Carousel>
-    <Swiper
-      modules={[Navigation, Pagination, Scrollbar, A11y, EffectCube]}
-      spaceBetween={50}
-      slidesPerView={3}
-      navigation
-      pagination={{ clickable: true }}
-      scrollbar={{ draggable: true }}
-      onSlideChange={() => console.log('slide change')}
-      onSwiper={(swiper) => console.log(swiper)}
-      effect={"cube"}
-      cubeEffect={{
-        shadow: true,
-        slideShadows: true,
-        shadowOffset: 20,
-        shadowScale: 0.94,
-      }}
-    >
-      {sellers.map((seller) => (
-        <SwiperSlide key={seller._id}>
-          <Link to={`/seller/${seller._id}`}>
-            <CCard>
-                <CCardBody>
-                    <CCardTitle>{seller.seller.name}</CCardTitle>
-                    <CCardImage orientation="top" src={seller.seller.logo} alt={seller.seller.name} />
-                </CCardBody>
-            </CCard>
-          </Link>
-          
-        </SwiperSlide>
-      ))}
-    </Swiper>
         
     <h1>Categories</h1>
     <CRow>
