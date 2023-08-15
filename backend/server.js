@@ -1,6 +1,5 @@
 import http from 'http';
 import { Server } from 'socket.io';
-import connectDB from './config/db.js';
 import express from 'express';
 import mongoose from 'mongoose';
 import dotenv from 'dotenv';
@@ -16,8 +15,8 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-connectDB();
-
+mongoose.connect(process.env.MONGODB_URI || 'mongodb://codemydotcom:Growth123@cluster0.nhm9fk1.mongodb.net/curiosity-database?retryWrites=true&w=majority
+');
 app.use('/api/uploads', uploadRouter);
 app.use('/api/users', userRouter);
 app.use('/api/products', productRouter);
