@@ -23,6 +23,7 @@ mongoose
   .catch((err) => {
     console.log(err.message);
   });
+
 app.use('/api/uploads', uploadRouter);
 app.use('/api/users', userRouter);
 app.use('/api/products', productRouter);
@@ -46,6 +47,8 @@ app.get('*', (req, res) =>
 app.use((err, req, res, next) => {
   res.status(500).send({ message: err.message });
 });
+
+const port = process.env.PORT || 5000;
 
 const httpServer = http.Server(app);
 const io = new Server(httpServer, { cors: { origin: '*' } });
@@ -119,11 +122,9 @@ io.on('connection', (socket) => {
   });
 });
 
-app.listen(PORT, ()=>{
-    console.log(`Server is listening at port ${PORT}`)
-})
-
-const PORT = process.env.PORT || 5000
+httpServer.listen(port, () => {
+  console.log(`Serve at http://localhost:${port}`);
+});
 
 // app.listen(port, () => {
 //   console.log(`Serve at http://localhost:${port}`);
