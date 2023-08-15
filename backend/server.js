@@ -15,7 +15,7 @@ const app = express();
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
-mongoose.connect(process.env.MONGODB_URI || 'mongodb://codemydotcom:Growth123@cluster0.nhm9fk1.mongodb.net/curiosity-database?retryWrites=true&w=majority
+mongoose.connect(process.env.MONGODB_URL || 'mongodb://codemydotcom:Growth123@cluster0.nhm9fk1.mongodb.net/curiosity-database?retryWrites=true&w=majority
 ');
 app.use('/api/uploads', uploadRouter);
 app.use('/api/users', userRouter);
