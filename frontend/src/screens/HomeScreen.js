@@ -69,7 +69,7 @@ export default function HomeScreen() {
         shadowScale: 0.94,
       }}
     >
-      {seller.map((seller) => (
+      {sellers.map((seller) => (
         <SwiperSlide key={seller._id}>
           <Link to={`/seller/${seller._id}`}>
             <CCard>
